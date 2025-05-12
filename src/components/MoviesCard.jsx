@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function MoviesCard({ movie }) {
 
     const { title, abstract, image } = movie;
@@ -8,7 +10,7 @@ function MoviesCard({ movie }) {
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{abstract}</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <Link to={`${movie.id}`} movie={movie} className="btn btn-primary">Vai ai dettagli</Link>
             </div>
         </div>
 
