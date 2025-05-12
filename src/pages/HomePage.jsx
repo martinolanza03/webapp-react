@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import MoviesCard from "../components/MoviesCard";
 
 
 function HomePage() {
@@ -17,6 +18,15 @@ function HomePage() {
 
     return <>
         <h1>Home Page</h1>
+        <div className="row">
+            {movies.map(movie =>
+                <div className="col col-md-4" key={movie.id}>
+                    <MoviesCard movie={movie} />
+                </div>
+
+            )}
+        </div>
+
     </>
 }
 
