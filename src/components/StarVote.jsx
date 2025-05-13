@@ -6,7 +6,7 @@ function StarVote({ vote }) {
     return (
         <>
             {[...Array(maxVote)].map((_, index) => (
-                index < vote ? <i key={index} className="fa-solid fa-star"></i> : <i key={index} className="fa-regular fa-star"></i>
+                index < vote ? <i key={index} className="fa-solid fa-star text-warning"></i> : <i key={index} className="fa-regular fa-star text-warning"></i>
             ))}
         </>
     );

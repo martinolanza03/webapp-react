@@ -27,14 +27,14 @@ function MoviesDetails() {
         <p>{abstract}</p>
         <p>{genre}</p>
         <h3>Media Voto</h3>
-        <p><StarVote vote={media_voto} /></p>
+        <p>{media_voto} <StarVote vote={media_voto} /></p>
         <h2>Recensioni</h2>
         <ul>
             {reviews && reviews.map((review, index) => (
                 <li key={index}>
                     <h4>{review.name}</h4>
                     <p>{review.text}</p>
-                    <p>Voto: <StarVote vote={review.vote} /></p>
+                    <p>Voto: {review.vote} <StarVote vote={review.vote} /></p>
                 </li>
             ))}
         </ul>
