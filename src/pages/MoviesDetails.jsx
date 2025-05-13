@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import StarVote from "../components/StarVote.jsx";
 
 
 function MoviesDetails() {
@@ -17,7 +18,7 @@ function MoviesDetails() {
 
     useEffect(getMoviesWithId, []);
 
-    const { title, abstract, image, genre, reviews } = moviesId;
+    const { title, abstract, image, genre, reviews, media_voto } = moviesId;
 
     return (<>
         <h1>Dettaglio Film</h1>
@@ -25,12 +26,15 @@ function MoviesDetails() {
         <img src={image} alt={title} />
         <p>{abstract}</p>
         <p>{genre}</p>
+        <h3>Media Voto</h3>
+        <p><StarVote vote={media_voto} /></p>
         <h2>Recensioni</h2>
         <ul>
             {reviews && reviews.map((review, index) => (
                 <li key={index}>
                     <h4>{review.name}</h4>
                     <p>{review.text}</p>
+                    <p>Voto: <StarVote vote={review.vote} /></p>
                 </li>
             ))}
         </ul>
