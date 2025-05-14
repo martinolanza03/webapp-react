@@ -41,7 +41,7 @@ function MoviesDetails() {
         </ul>
 
         <section>
-            <FormReview movie_id={id} />
+            <FormReview movie_id={id} refreshMovie={getMoviesWithId} />
         </section>
 
     </>)

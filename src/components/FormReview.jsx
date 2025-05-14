@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-function FormReview({ movie_id }) {
+function FormReview({ movie_id, refreshMovie }) {
 
     const initialRreview = {
         name: '',
@@ -31,6 +31,7 @@ function FormReview({ movie_id }) {
         axios.post(`http://127.0.0.1:3000/movies/${movie_id}/reviews`, formData)
             .then(response => {
                 console.log('Recensione inviata con successo:', response.data);
+                refreshMovie();
                 setFormData(initialRreview);
             })
             .catch(error => {
