@@ -1,4 +1,4 @@
-import { Form, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import StarVote from "../components/StarVote.jsx";
@@ -41,7 +41,7 @@ function MoviesDetails() {
         </ul>
 
         <section>
-            <FormReview />
+            <FormReview movie_id={id} />
         </section>
 
     </>)
