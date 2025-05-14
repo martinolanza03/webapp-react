@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom";
+import { Form, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import StarVote from "../components/StarVote.jsx";
+import FormReview from "../components/FormReview.jsx";
 
 
 function MoviesDetails() {
@@ -38,6 +39,10 @@ function MoviesDetails() {
                 </li>
             ))}
         </ul>
+
+        <section>
+            <FormReview />
+        </section>
 
     </>)
 }
