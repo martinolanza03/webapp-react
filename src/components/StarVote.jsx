@@ -1,5 +1,4 @@
 function StarVote({ vote }) {
-    console.log(vote);
 
     const maxVote = 5;
 
