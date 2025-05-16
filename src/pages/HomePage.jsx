@@ -1,16 +1,20 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import MoviesCard from "../components/MoviesCard";
+import LoaderContext from "../context/LoaderContext.jsx";
 
 
 function HomePage() {
 
     const [movies, setMovies] = useState([]);
+    const { setLoading } = useContext(LoaderContext);
 
     function getMovies() {
+        setLoading(true);
         axios.get('http://127.0.0.1:3000/movies')
             .then(response => setMovies(response.data))
-            .catch(error => console.error('Errore:', error));
+            .catch(error => console.error('Errore:', error))
+            .finally(() => setLoading(false));
     }
 
     useEffect(getMovies, []);
